@@ -1,2 +1,92 @@
 
-> New Project > ASP.NET Core Empty
+****************************************************************************************************
+> New Project > ASP.NET Core Empty > .net 8 version
+
+****************************************************************************************************
+> Create Project Folder Structure as below
+****************************************************************************************************
+ProjectName
+-- wwwroot
+---- css
+------ site.css
+---- js
+------ site.js
+---- img
+------ logo.png
+---- lib
+------ bootstrap
+-------- bootstrap.min.css
+-------- bootstrap.bundle.min.js
+------ jquery
+
+-- Controllers
+---- HomeController.cs
+---- AboutController.cs
+---- ContactController.cs
+---- LoginController.cs
+---- RegisterController.cs
+---- UserController.cs
+-- Views
+---- _ViewImports.cshtml
+---- _ViewStart.cshtml
+---- Shared
+------ _Layout.cshtml
+---- Home
+------ Index.cshtml
+---- About
+------ Index.cshtml
+---- Contact
+------ Index.cshtml
+---- Login
+------ Index.cshtml
+---- Register
+------ Index.cshtml
+---- User
+------ Index.cshtml
+------ Add.cshtml
+------ Edit.cshtml
+------ View.cshtml
+-- Models
+---- LoginModel.cs
+---- RegisterModel.cs
+
+
+****************************************************************************************************
+> Setting and Configuration in "Program.cs" file
+****************************************************************************************************
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.MapControllerRoute(
+    name: "default", 
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.Run();
+
+
+****************************************************************************************************
+> Generate Entity Data Models from Database
+****************************************************************************************************
+Install below three packages
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.SqlServer
+
+
+Execute below command in Tools > NeGet Package Manager > Package Manager Console
+
+For Add:
+Scaffold-DbContext "Server=(local);Database=StarInfotech;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext
+
+For Update:
+Scaffold-DbContext "Server=(local);Database=StarInfotech;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext -Force
+
+****************************************************************************************************
