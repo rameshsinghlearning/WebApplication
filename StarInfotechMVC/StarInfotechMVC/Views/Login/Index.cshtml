@@ -1,12 +1,39 @@
-﻿<section>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
+﻿@model LoginModel;
+
+@{
+    ViewData["Title"] = "Star Infotech : Login";
+}
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Login</h4>
-
-                    </div>                   
+                        <h4 class="card-title">
+                            <i class="fa fa-user fa-lg"></i> Login
+                        </h4>
+                        <hr />
+                        <form asp-action="Index" asp-controller="Login" method="post">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label">Username:</label>
+                                <input type="text" class="form-control" asp-for="Username">
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password:</label>
+                                <input type="password" class="form-control" asp-for="Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            @if (ViewBag.Message != null)
+                            {
+                                <p class="text-danger">@ViewBag.Message</p>
+                            }
+                            <button type="submit" class="btn btn-primary">
+                                Login <i class="fa fa-sign-in"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

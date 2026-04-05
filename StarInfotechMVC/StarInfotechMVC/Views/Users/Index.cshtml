@@ -1,5 +1,9 @@
 ﻿@model List<User>
 
+@{
+    ViewData["Title"] = "Star Infotech : Users";
+}
+
 <section class="mt-5">
     <div class="container-fluid">
         <div class="row">
@@ -7,7 +11,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Users</h4>
-                        <table class="table table-hover table-bordered">
+                        <table class="table table-hover table-bordered table-sm">
                             <thead class="table-dark">
                                 <tr>
                                     <th>Action</th>
@@ -17,6 +21,10 @@
                                     <th>Username</th>
                                     <th>Email</th>
                                     <th>Mobile No</th>
+                                    <th>Role</th>
+                                    <th>Is Active</th>
+                                    <th>Added Date</th>
+                                    <th>Added By</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,8 +32,12 @@
                                 {
                                     <tr>
                                         <td>
-                                            <a class="btn btn-info" asp-action="View" asp-controller="Users" asp-route-id="@user.Id">View</a>
-                                            <a class="btn btn-primary" asp-action="Edit" asp-controller="Users" asp-route-id="@user.Id">Edit</a>
+                                            <a asp-action="View" asp-controller="Users" asp-route-id="@user.Id" title="View">
+                                                <i class="fa fa-info-circle fa-2x text-info"></i>
+                                            </a>&nbsp;
+                                            <a asp-action="Edit" asp-controller="Users" asp-route-id="@user.Id" title="Edit">
+                                                <i class="fa fa-pencil fa-2x text-primary"></i>
+                                            </a>
                                         </td>
                                         <td>@user.Id</td>
                                         <td>@user.FirstName</td>
@@ -33,6 +45,19 @@
                                         <td>@user.Username</td>
                                         <td>@user.Email</td>
                                         <td>@user.MobileNo</td>
+                                        <td>@user.Role?.Name</td>
+                                        <td>
+                                            @if(user.IsActive)
+                                            {
+                                                <span class="badge bg-primary">Yes</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-secondary">No</span>
+                                            }
+                                        </td>
+                                        <td>@user.AddedDate</td>
+                                        <td>@user.AddedBy?.Username</td>
                                     </tr>
                                 }
                             </tbody>
