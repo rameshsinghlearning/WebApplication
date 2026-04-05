@@ -1,4 +1,61 @@
-﻿@{
+﻿@model RegisterModel;
+
+@{
     ViewData["Title"] = "Star Infotech : Register";
 }
-<h1>REGISTER PAGE</h1>
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <i class="fa fa-user fa-lg"></i> Register
+                        </h4>
+                        <hr />
+                        <form asp-action="Index" asp-controller="Register" method="post">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label">First Name:</label>
+                                <input type="text" class="form-control" asp-for="FirstName" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label">Last Name:</label>
+                                <input type="text" class="form-control" asp-for="LastName" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label class="form-label">Username:</label>
+                                <input type="text" class="form-control" asp-for="Username" />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password:</label>
+                                <input type="password" class="form-control" asp-for="Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email:</label>
+                                <input type="email" class="form-control" asp-for="Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mobile No:</label>
+                                <input type="text" class="form-control" asp-for="MobileNo" />
+                                <span asp-validation-for="MobileNo" class="text-danger"></span>
+                            </div>
+                            @if (ViewBag.Message != null)
+                            {
+                                <p class="text-danger">@ViewBag.Message</p>
+                            }
+                            <button type="submit" class="btn btn-primary">
+                                Register <i class="fa fa-sign-in"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
