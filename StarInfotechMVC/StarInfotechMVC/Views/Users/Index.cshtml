@@ -37,6 +37,9 @@
                                             </a>&nbsp;
                                             <a asp-action="Edit" asp-controller="Users" asp-route-id="@user.Id" title="Edit">
                                                 <i class="fa fa-pencil fa-2x text-primary"></i>
+                                            </a>&nbsp;
+                                            <a asp-action="Delete" asp-controller="Users" asp-route-id="@user.Id" title="Delete">
+                                                <i class="fa fa-trash fa-2x text-danger"></i>
                                             </a>
                                         </td>
                                         <td>@user.Id</td>

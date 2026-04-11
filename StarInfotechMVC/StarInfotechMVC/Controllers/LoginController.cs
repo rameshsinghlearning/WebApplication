@@ -19,7 +19,7 @@ namespace StarInfotechMVC.Controllers
                 var dbContext = new AppDbContext();
 
                 var user = dbContext.Users
-                    .FirstOrDefault(x => x.Username == model.Username && x.Password == model.Password);
+                    .FirstOrDefault(x => x.Username == model.Username && x.Password == model.Password && x.IsActive);
 
                 if (user == null)
                 {
