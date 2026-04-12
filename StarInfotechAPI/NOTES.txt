@@ -6,46 +6,10 @@
 > Create Project Folder Structure as below
 ****************************************************************************************************
 ProjectName
--- wwwroot
----- css
------- site.css
----- js
------- site.js
----- img
------- logo.png
----- lib
------- bootstrap
--------- bootstrap.min.css
--------- bootstrap.bundle.min.js
------- jquery
-
 -- Controllers
----- HomeController.cs
----- AboutController.cs
----- ContactController.cs
 ---- LoginController.cs
 ---- RegisterController.cs
 ---- UserController.cs
--- Views
----- _ViewImports.cshtml
----- _ViewStart.cshtml
----- Shared
------- _Layout.cshtml
----- Home
------- Index.cshtml
----- About
------- Index.cshtml
----- Contact
------- Index.cshtml
----- Login
------- Index.cshtml
----- Register
------- Index.cshtml
----- User
------- Index.cshtml
------- Add.cshtml
------- Edit.cshtml
------- View.cshtml
 -- Models
 ---- LoginModel.cs
 ---- RegisterModel.cs
@@ -56,21 +20,13 @@ ProjectName
 ****************************************************************************************************
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddSession();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.UseStaticFiles();
-
-app.UseSession();
-
 app.UseRouting();
 
-app.MapControllerRoute(
-    name: "default", 
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
 
 app.Run();
 
@@ -96,18 +52,7 @@ Scaffold-DbContext "Server=(local);Database=StarInfotech;Trusted_Connection=True
 ****************************************************************************************************
 
 
-
-<section class="mt-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Login</h4>
-                        Content...
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+GET		> For Get All or One Records	(http://localhost:5211/api/user)
+POST	> For Add Record
+PUT		> For Update Record
+DELETE	> For Delete the Record

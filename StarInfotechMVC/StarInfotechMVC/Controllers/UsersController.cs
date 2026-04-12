@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StarInfotechMVC.Filters;
 using StarInfotechMVC.Models;
 
 namespace StarInfotechMVC.Controllers
 {
+    [SessionAuthorize]
     public class UsersController : Controller
     {
         private readonly AppDbContext dbContext;

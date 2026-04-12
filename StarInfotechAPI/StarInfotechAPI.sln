@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarInfotechAPI", "StarInfotechAPI\StarInfotechAPI.csproj", "{15311401-7053-484F-ADAB-26CB4E7B987F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{922C111C-792B-4C38-870B-CA473CA6FE98}"
+	ProjectSection(SolutionItems) = preProject
+		NOTES.txt = NOTES.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15311401-7053-484F-ADAB-26CB4E7B987F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15311401-7053-484F-ADAB-26CB4E7B987F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15311401-7053-484F-ADAB-26CB4E7B987F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15311401-7053-484F-ADAB-26CB4E7B987F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

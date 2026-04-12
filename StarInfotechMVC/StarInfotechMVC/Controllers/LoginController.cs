@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using StarInfotechMVC.Models;
 using StarInfotechMVC.ViewModels;
 
@@ -28,11 +29,20 @@ namespace StarInfotechMVC.Controllers
                 }
                 else
                 {
+                    HttpContext.Session.SetString("Username", user.Username);
+
                     return RedirectToAction("Index", "Users");
                 }
             }
 
             return View(model);
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear(); // removes all session values
+            
+            return RedirectToAction("Index", "Login");
         }
     }
 }
