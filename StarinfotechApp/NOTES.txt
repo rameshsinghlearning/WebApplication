@@ -1,0 +1,38 @@
+https://www.npmjs.com/package
+
+use className instead of class
+
+**************************************************
+CREATE REACT PROJECT
+**************************************************
+npx create-react-app@latest starinfotechapp
+
+npm start
+
+
+**************************************************
+ROUTING / NAVIGATION
+**************************************************
+npm install react-router-dom
+
+https://reactrouter.com/upgrading/v6
+
+<BrowserRouter>
+<Routes>
+<Route>
+
+**************************************************
+BOOSTRAP
+**************************************************
+npm i bootstrap
+
+in 'index.js' file
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+**************************************************
+API CALL
+**************************************************
+
+npm i axios
+
